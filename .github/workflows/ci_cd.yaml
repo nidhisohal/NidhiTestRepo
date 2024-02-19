@@ -1,1 +1,49 @@
+# This is a basic workflow to help you get started with Actions
+
+name: SnapLogic CI/CD Demo
+env:
+  URL: https://elastic.snaplogic.com
+  ORG: CookMedicalQA
+  PROJECT_SPACE_PROMOTE: XXXXX
+  PROJECT_PROMOTE: aaaaaaa
+      
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches:
+      - releases/**
+  pull_request_target:
+    types:
+      - closed
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  promote:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Create prod project space
+      - name: Create Prod Project Space
+        run: |
+          curl -s -X POST ${{ env.URL }}/api/1/rest/public/assetapi/project/${{ env.ORG }}/${{ env.PROJECT_SPACE_PROMOTE }}	 \
+            -u ${{ secrets.SL_USER }}:${{ secrets.SL_PASSWORD_TEST }} \
+            -H "Content-Type: application/json" \
+            -d '{"permissions":[{"perms": ["R","W","X"],"subject_type": "USER","inherit": true,"subject": "${{ secrets.SL_USER }}"}]}'
+      # 2. Create prod project
+      - name: Create Prod Project
+        run: |
+          curl -s -X POST ${{ env.URL }}/api/1/rest/public/assetapi/project/${{ env.ORG }}/${{ env.PROJECT_SPACE_PROMOTE }}/${{ env.PROJECT_PROMOTE }} \
+            -u ${{ secrets.SL_USER }}:${{ secrets.SL_PASSWORD_TEST }} \
+            -H "Content-Type: application/json" \
+            -d '{"permissions":[{"perms": ["R","W","X"],"subject_type": "USER","inherit": true,"subject": "${{ secrets.SL_USER }}"}]}'
+      # 3. Clone to prod project
+      - name: Clone to Prod Project
+        run: |
+          curl -s -X POST ${{ env.URL }}/api/1/rest/public/project/checkout/${{ env.ORG }}/${{ env.PROJECT_SPACE_PROMOTE }}/${{ env.PROJECT_PROMOTE }} \
+            -u ${{ secrets.SL_USER }}:${{ secrets.SL_PASSWORD_TEST }} \
+            -H "Content-Type: application/json" \
+            -d '{"repo":"${{ github.repository }}","ref" : "heads/main"}'
 
