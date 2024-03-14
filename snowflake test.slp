@@ -10,6 +10,18 @@
             "dst_view_id": "input0",
             "src_id": "11111111-1111-1111-1111-000000000000",
             "src_view_id": "output0"
+        },
+        "link104": {
+            "dst_id": "11111111-1111-1111-1111-000000000002",
+            "dst_view_id": "input0",
+            "src_id": "11111111-1111-1111-1111-000000000001",
+            "src_view_id": "output0"
+        },
+        "link105": {
+            "dst_id": "11111111-1111-1111-1111-000000000003",
+            "dst_view_id": "input0",
+            "src_id": "11111111-1111-1111-1111-000000000002",
+            "src_view_id": "output0"
         }
     },
     "property_map": {
@@ -42,7 +54,7 @@
                     "value": "document"
                 }
             },
-            "11111111-1111-1111-1111-000000000002_inputRows": {
+            "11111111-1111-1111-1111-000000000004_inputRows": {
                 "label": {
                     "value": "Snowflake - Bulk Upsert - rows"
                 },
@@ -52,14 +64,6 @@
             }
         },
         "output": {
-            "11111111-1111-1111-1111-000000000001_output0": {
-                "label": {
-                    "value": "Copy - output0"
-                },
-                "view_type": {
-                    "value": "document"
-                }
-            },
             "11111111-1111-1111-1111-000000000001_output1": {
                 "label": {
                     "value": "Copy - output1"
@@ -68,7 +72,15 @@
                     "value": "document"
                 }
             },
-            "11111111-1111-1111-1111-000000000002_output0": {
+            "11111111-1111-1111-1111-000000000003_output0": {
+                "label": {
+                    "value": "Mapper1 - output0"
+                },
+                "view_type": {
+                    "value": "document"
+                }
+            },
+            "11111111-1111-1111-1111-000000000004_output0": {
                 "label": {
                     "value": "Snowflake - Bulk Upsert - output0"
                 },
@@ -133,6 +145,30 @@
                 "source": "snap catagory"
             },
             "11111111-1111-1111-1111-000000000002": {
+                "error": {},
+                "grid_x_int": 3,
+                "grid_y_int": 2,
+                "index": null,
+                "input": {},
+                "output": {},
+                "recommendation_id": null,
+                "rot_int": 0,
+                "rot_tail_int": 0,
+                "source": "snap catagory"
+            },
+            "11111111-1111-1111-1111-000000000003": {
+                "error": {},
+                "grid_x_int": 4,
+                "grid_y_int": 2,
+                "index": null,
+                "input": {},
+                "output": {},
+                "recommendation_id": null,
+                "rot_int": 0,
+                "rot_tail_int": 0,
+                "source": "snap catagory"
+            },
+            "11111111-1111-1111-1111-000000000004": {
                 "error": {},
                 "grid_x_int": 5,
                 "grid_y_int": 3,
@@ -362,9 +398,149 @@
             }
         },
         "11111111-1111-1111-1111-000000000002": {
+            "class_id": "com-snaplogic-snaps-transform-datatransform",
+            "class_version": 4,
+            "instance_id": "11111111-1111-1111-1111-000000000002",
+            "property_map": {
+                "error": {
+                    "error0": {
+                        "label": {
+                            "value": "error0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    },
+                    "error_behavior": {
+                        "value": "fail"
+                    }
+                },
+                "info": {
+                    "label": {
+                        "value": "Mapper"
+                    }
+                },
+                "input": {
+                    "input0": {
+                        "label": {
+                            "value": "input0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "output": {
+                    "output0": {
+                        "label": {
+                            "value": "output0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "settings": {
+                    "execution_mode": {
+                        "value": "Validate & Execute"
+                    },
+                    "passThrough": {
+                        "value": false
+                    },
+                    "transformations": {
+                        "value": {
+                            "mappingRoot": {
+                                "value": "$"
+                            },
+                            "mappingTable": {
+                                "value": [
+                                    {
+                                        "expression": {
+                                            "expression": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "view_serial": 100
+            }
+        },
+        "11111111-1111-1111-1111-000000000003": {
+            "class_id": "com-snaplogic-snaps-transform-datatransform",
+            "class_version": 4,
+            "instance_id": "11111111-1111-1111-1111-000000000003",
+            "property_map": {
+                "error": {
+                    "error0": {
+                        "label": {
+                            "value": "error0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    },
+                    "error_behavior": {
+                        "value": "fail"
+                    }
+                },
+                "info": {
+                    "label": {
+                        "value": "Mapper1"
+                    }
+                },
+                "input": {
+                    "input0": {
+                        "label": {
+                            "value": "input0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "output": {
+                    "output0": {
+                        "label": {
+                            "value": "output0"
+                        },
+                        "view_type": {
+                            "value": "document"
+                        }
+                    }
+                },
+                "settings": {
+                    "execution_mode": {
+                        "value": "Validate & Execute"
+                    },
+                    "passThrough": {
+                        "value": false
+                    },
+                    "transformations": {
+                        "value": {
+                            "mappingRoot": {
+                                "value": "$"
+                            },
+                            "mappingTable": {
+                                "value": [
+                                    {
+                                        "expression": {
+                                            "expression": true
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "view_serial": 100
+            }
+        },
+        "11111111-1111-1111-1111-000000000004": {
             "class_id": "com-snaplogic-snaps-snowflake-bulkupsert",
             "class_version": 1,
-            "instance_id": "11111111-1111-1111-1111-000000000002",
+            "instance_id": "11111111-1111-1111-1111-000000000004",
             "property_map": {
                 "account": {
                     "account_ref": {
