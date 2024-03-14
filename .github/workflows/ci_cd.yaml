@@ -5,7 +5,7 @@ env:
   URL: https://elastic.snaplogic.com
   ORG: snaplogic
   PROJECT_SPACE_PROMOTE: Nidhi Sohal
-  PROJECT_PROMOTE: Memory Audit
+  PROJECT_PROMOTE: ProdGit
       
 # Controls when the workflow will run
 on:
