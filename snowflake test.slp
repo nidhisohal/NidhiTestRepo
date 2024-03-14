@@ -10,18 +10,6 @@
             "dst_view_id": "input0",
             "src_id": "11111111-1111-1111-1111-000000000000",
             "src_view_id": "output0"
-        },
-        "link102": {
-            "dst_id": "11111111-1111-1111-1111-000000000002",
-            "dst_view_id": "input0",
-            "src_id": "11111111-1111-1111-1111-000000000001",
-            "src_view_id": "output0"
-        },
-        "link103": {
-            "dst_id": "11111111-1111-1111-1111-000000000003",
-            "dst_view_id": "inputRows",
-            "src_id": "11111111-1111-1111-1111-000000000002",
-            "src_view_id": "output0"
         }
     },
     "property_map": {
@@ -54,7 +42,7 @@
                     "value": "document"
                 }
             },
-            "11111111-1111-1111-1111-000000000004_inputRows": {
+            "11111111-1111-1111-1111-000000000002_inputRows": {
                 "label": {
                     "value": "Snowflake - Bulk Upsert - rows"
                 },
@@ -64,6 +52,14 @@
             }
         },
         "output": {
+            "11111111-1111-1111-1111-000000000001_output0": {
+                "label": {
+                    "value": "Copy - output0"
+                },
+                "view_type": {
+                    "value": "document"
+                }
+            },
             "11111111-1111-1111-1111-000000000001_output1": {
                 "label": {
                     "value": "Copy - output1"
@@ -72,15 +68,7 @@
                     "value": "document"
                 }
             },
-            "11111111-1111-1111-1111-000000000003_output0": {
-                "label": {
-                    "value": "Snowflake - Insert - output0"
-                },
-                "view_type": {
-                    "value": "document"
-                }
-            },
-            "11111111-1111-1111-1111-000000000004_output0": {
+            "11111111-1111-1111-1111-000000000002_output0": {
                 "label": {
                     "value": "Snowflake - Bulk Upsert - output0"
                 },
@@ -145,30 +133,6 @@
                 "source": "snap catagory"
             },
             "11111111-1111-1111-1111-000000000002": {
-                "error": {},
-                "grid_x_int": 3,
-                "grid_y_int": 2,
-                "index": 0,
-                "input": {},
-                "output": {},
-                "recommendation_id": "55ededda-4a18-f3a6-0835-2d2016f5e5f1_0",
-                "rot_int": 0,
-                "rot_tail_int": 0,
-                "source": "iris placeholder"
-            },
-            "11111111-1111-1111-1111-000000000003": {
-                "error": {},
-                "grid_x_int": 4,
-                "grid_y_int": 2,
-                "index": 0,
-                "input": {},
-                "output": {},
-                "recommendation_id": "55f7f4f2-2c67-39f7-74ac-0562b86e02cb_0",
-                "rot_int": 0,
-                "rot_tail_int": 0,
-                "source": "iris placeholder"
-            },
-            "11111111-1111-1111-1111-000000000004": {
                 "error": {},
                 "grid_x_int": 5,
                 "grid_y_int": 3,
@@ -398,177 +362,9 @@
             }
         },
         "11111111-1111-1111-1111-000000000002": {
-            "class_id": "com-snaplogic-snaps-transform-datatransform",
-            "class_version": 4,
-            "instance_id": "11111111-1111-1111-1111-000000000002",
-            "property_map": {
-                "error": {
-                    "error0": {
-                        "label": {
-                            "value": "error0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    },
-                    "error_behavior": {
-                        "value": "fail"
-                    }
-                },
-                "info": {
-                    "label": {
-                        "value": "Mapper"
-                    }
-                },
-                "input": {
-                    "input0": {
-                        "label": {
-                            "value": "input0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "output": {
-                    "output0": {
-                        "label": {
-                            "value": "output0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "settings": {
-                    "execution_mode": {
-                        "value": "Validate & Execute"
-                    },
-                    "passThrough": {
-                        "value": false
-                    },
-                    "transformations": {
-                        "value": {
-                            "mappingRoot": {
-                                "value": "$"
-                            },
-                            "mappingTable": {
-                                "value": [
-                                    {
-                                        "expression": {
-                                            "expression": true
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                },
-                "view_serial": 100
-            }
-        },
-        "11111111-1111-1111-1111-000000000003": {
-            "class_id": "com-snaplogic-snaps-snowflake-insert",
-            "class_version": 1,
-            "instance_id": "11111111-1111-1111-1111-000000000003",
-            "property_map": {
-                "account": {
-                    "account_ref": {
-                        "value": {
-                            "label": {
-                                "expression": false,
-                                "label": "../shared/snowflake_account",
-                                "value": "snowflake_account"
-                            },
-                            "ref_class_id": {
-                                "value": "com-snaplogic-snap-api-sql-accounts-snowflakedatabaseaccount"
-                            },
-                            "ref_id": {
-                                "expression": false,
-                                "value": null
-                            }
-                        }
-                    }
-                },
-                "error": {
-                    "error0": {
-                        "label": {
-                            "value": "error0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    },
-                    "error_behavior": {
-                        "value": "fail"
-                    }
-                },
-                "info": {
-                    "label": {
-                        "value": "Snowflake - Insert"
-                    },
-                    "notes": {}
-                },
-                "input": {
-                    "inputRows": {
-                        "label": {
-                            "value": "rows"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "output": {
-                    "output0": {
-                        "label": {
-                            "value": "output0"
-                        },
-                        "view_type": {
-                            "value": "document"
-                        }
-                    }
-                },
-                "settings": {
-                    "createTable": {
-                        "value": false
-                    },
-                    "executable_during_suggest": {
-                        "value": false
-                    },
-                    "execution_mode": {
-                        "value": "Execute only"
-                    },
-                    "maxRetryProp": {
-                        "expression": false,
-                        "value": 0
-                    },
-                    "preserveCaseSensistiveness": {
-                        "value": false
-                    },
-                    "retryIntervalProp": {
-                        "expression": false,
-                        "value": 1
-                    },
-                    "schemaName": {
-                        "expression": false,
-                        "value": null
-                    },
-                    "sqlQueryManagement": {
-                        "value": "Continue to execute queued queries when pipeline is stopped or if it fails"
-                    },
-                    "tableName": {
-                        "expression": false,
-                        "value": null
-                    }
-                },
-                "view_serial": 100
-            }
-        },
-        "11111111-1111-1111-1111-000000000004": {
             "class_id": "com-snaplogic-snaps-snowflake-bulkupsert",
             "class_version": 1,
-            "instance_id": "11111111-1111-1111-1111-000000000004",
+            "instance_id": "11111111-1111-1111-1111-000000000002",
             "property_map": {
                 "account": {
                     "account_ref": {
