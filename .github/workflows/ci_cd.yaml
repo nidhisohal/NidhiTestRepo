@@ -3,9 +3,9 @@
 name: SnapLogic CI/CD Demo
 env:
   URL: https://elastic.snaplogic.com
-  ORG: CookMedicalQA
-  PROJECT_SPACE_PROMOTE: XXXXX
-  PROJECT_PROMOTE: aaaaaaa
+  ORG: snaplogic
+  PROJECT_SPACE_PROMOTE: Nidhi Sohal
+  PROJECT_PROMOTE: Memory Audit
       
 # Controls when the workflow will run
 on:
