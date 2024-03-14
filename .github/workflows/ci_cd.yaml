@@ -4,7 +4,7 @@ name: SnapLogic CI/CD Demo
 env:
   URL: https://elastic.snaplogic.com
   ORG: snaplogic
-  PROJECT_SPACE_PROMOTE: Nidhi Sohal
+  PROJECT_SPACE_PROMOTE: Prodgit
   PROJECT_PROMOTE: MemoryAudit
       
 # Controls when the workflow will run
