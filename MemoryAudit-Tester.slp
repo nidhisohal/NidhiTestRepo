@@ -2086,7 +2086,7 @@
                 "settings": {
                     "avscSchemaFile": {
                         "expression": false,
-                        "value": "simple.avsc"
+                        "value": ""
                     },
                     "execution_mode": {
                         "value": "Validate & Execute"
