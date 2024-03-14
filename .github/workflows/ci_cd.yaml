@@ -5,14 +5,14 @@ env:
   URL: https://elastic.snaplogic.com
   ORG: snaplogic
   PROJECT_SPACE_PROMOTE: Nidhi Sohal
-  PROJECT_PROMOTE: ProdGit
+  PROJECT_PROMOTE: MemoryAudit
       
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches:
-      - releases/**
+      - prod/**
   pull_request_target:
     types:
       - closed
